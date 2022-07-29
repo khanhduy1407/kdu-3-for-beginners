@@ -10,11 +10,16 @@
     <h1>Hello, Kdu :)</h1>
 
     <div id="app">
-        <p>{{ title }} - {{ author }} - {{ age }}</p>
+        <div k-if="showBooks">
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+        </div>
 
-        <button k-on:click="age++">Increase age</button>
-        <button k-on:click="age--">Decrease age</button>
-        <div @click="changeTitle('Oathbringer')">Click to change book title</div>
+        <button @click="toggleShowBooks">
+            <span k-if="showBooks">Hide Books</span>
+            <span k-else>Show Books</span>
+        </button>
+
+        <div k-show="showBooks">currently showing books</div>
     </div>
 
     <script src="./app.js"></script>
