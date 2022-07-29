@@ -11,9 +11,11 @@
 
     <div id="app">
         <p>{{ title }} - {{ author }} - {{ age }}</p>
-    </div>
 
-    {{ title }}
+        <button k-on:click="age++">Increase age</button>
+        <button k-on:click="age--">Decrease age</button>
+        <div @click="changeTitle('Oathbringer')">Click to change book title</div>
+    </div>
 
     <script src="./app.js"></script>
 </body>
