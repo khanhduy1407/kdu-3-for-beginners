@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Kdu</title>
     <script src="https://unpkg.com/kdu@3"></script>
+    <link href="./style.css" rel="stylesheet">
 </head>
 <body>
     <h1>Hello, Kdu :)</h1>
@@ -15,7 +16,7 @@
 
         <div k-if="showBooks">
             <ul>
-                <li k-for="book in books">
+                <li k-for="book in books" :class="{ fav: book.isFav }">
                     <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
