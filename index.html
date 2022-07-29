@@ -10,9 +10,13 @@
     <h1>Hello, Kdu :)</h1>
 
     <div id="app">
+        <!-- attribute binding -->
+        <!-- <a :href="url">best website ever</a> -->
+
         <div k-if="showBooks">
             <ul>
                 <li k-for="book in books">
+                    <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
                 </li>
