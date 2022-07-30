@@ -2,15 +2,20 @@
   <h1>Reaction Timer</h1>
   <button @click="start" :disabled="isPlaying">play</button>
   <Block k-if="isPlaying" :delay="delay" @end="endGame" />
-  <p k-if="showResults">Reaction time: {{ score }} ms</p>
+  <Results k-if="showResults" :score="score" />
 </template>
 
 <script>
+// Challenge
+//  - when the game ends, show the results component
+//  - output the score inside the results component
+
 import Block from './components/Block.kdu'
+import Results from './components/Results.kdu'
 
 export default {
   name: 'App',
-  components: { Block },
+  components: { Block, Results },
   data() {
     return {
       isPlaying: false,
