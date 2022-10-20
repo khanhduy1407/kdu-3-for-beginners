@@ -1,37 +1,30 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <h2>Refs</h2>
-    <p>{{ ninjaOne.name }} - {{ ninjaOne.age }} - {{ nameOne }}</p>
-    <button @click="updateNinjaOne">Update ninja one</button>
-    <h2>Reactive</h2>
-    <p>{{ ninjaTwo.name }} - {{ ninjaTwo.age }} - {{ nameTwo }}</p>
-    <button @click="updateNinjaTwo">Update ninja two</button>
+    <input type="text" k-model="search">
+    <p>search term - {{ search }}</p>
+    <div k-for="name in matchingNames" :key="name">{{ name }}</div>
   </div>
 </template>
 
 <script>
-import { ref, reactive } from 'kdu'
+import { computed, ref } from 'kdu'
 
 export default {
   name: 'HomeView',
   setup() {
-    const ninjaOne = ref({ name: 'mario', age: 30 })
-    const ninjaTwo = reactive({ name: 'nkduy', age: 19 })
+    // const name = computed(() => {
+    //   return 'nkduy'
+    // })
 
-    const nameOne = ref('mario')
-    const nameTwo = reactive('nkduy')
-    
-    const updateNinjaOne = () => {
-      ninjaOne.value.age = 40
-    }
-    
-    const updateNinjaTwo = () => {
-      ninjaTwo.age = 35
-      // nameTwo = reactive('mario')
-    }
+    const search = ref('')
+    const names = ref(['mario', 'nkduy', 'yoshi', 'toad', 'bowser', 'peach'])
 
-    return { ninjaOne, updateNinjaOne, ninjaTwo, updateNinjaTwo, nameOne, nameTwo }
+    const matchingNames = computed(() => {
+      return names.value.filter((name) => name.includes(search.value))
+    })
+
+    return { names, search, matchingNames }
   }
 }
 </script>
