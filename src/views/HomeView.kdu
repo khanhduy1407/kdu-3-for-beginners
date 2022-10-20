@@ -3,6 +3,8 @@
     home
     <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
     <button @click="handleClick">click me</button>
+    <button @click="age++">add 1 to age</button>
+    <input type="text" k-model="name">
   </div>
 </template>
 
@@ -14,19 +16,22 @@ export default {
   setup() {
     console.log(this)
 
-    const p = ref('hello')
-      console.log(p, p.value)
+    // const p = ref(null)
 
-    let name = 'mario'
-    let age = 30
+    const name = ref('mario')
+    const age = ref(30)
 
     const handleClick = () => {
-      console.log(p, p.value)
-      p.value.classList.add('test')
-      p.value.textContent = 'Hello, NKDuy'
+      name.value = 'nkduy'
+      age.value = 35
     }
 
-    return { name, age, handleClick, p }
+    return { name, age, handleClick }
+  },
+  data() {
+    return {
+      score: 5
+    }
   }
 }
 </script>
