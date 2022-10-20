@@ -1,18 +1,14 @@
 <template>
   <div class="home">
-    <img alt="Kdu logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Kdu.js App"/>
+    <h1>Homepage</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, quam pariatur ipsa vel iste soluta? Odit iste deleniti praesentium inventore, doloremque aspernatur quia ipsam fuga quod cum earum optio perferendis corporis rem nihil molestias quidem laboriosam sequi doloribus sint aut quasi iusto, quam culpa? Et sint maxime iure. Nihil animi ex qui molestias voluptates! Earum, cum magnam! Doloribus ut nihil adipisci commodi quaerat, sed cupiditate quas dolores dolore numquam vitae explicabo corporis est unde. Impedit, officia eveniet sunt voluptas veritatis similique assumenda numquam ducimus? Ut placeat impedit laboriosam ipsam quisquam inventore sit excepturi ex hic, quibusdam exercitationem, accusantium perferendis magnam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, quam pariatur ipsa vel iste soluta? Odit iste deleniti praesentium inventore, doloremque aspernatur quia ipsam fuga quod cum earum optio perferendis corporis rem nihil molestias quidem laboriosam sequi doloribus sint aut quasi iusto, quam culpa? Et sint maxime iure. Nihil animi ex qui molestias voluptates! Earum, cum magnam! Doloribus ut nihil adipisci commodi quaerat, sed cupiditate quas dolores dolore numquam vitae explicabo corporis est unde. Impedit, officia eveniet sunt voluptas veritatis similique assumenda numquam ducimus? Ut placeat impedit laboriosam ipsam quisquam inventore sit excepturi ex hic, quibusdam exercitationem, accusantium perferendis magnam.</p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.kdu'
-
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  components: {}
 }
 </script>
