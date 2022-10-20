@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <label>Email:</label>
     <input type="email" required k-model="email">
 
@@ -22,6 +22,10 @@
       <input type="checkbox" k-model="terms" required>
       <label>Accept terms and conditions</label>
     </div>
+
+    <div class="submit">
+      <button>Create an Account</button>
+    </div>
   </form>
 
   <p>Email: {{ email }}</p>
@@ -31,9 +35,6 @@
 </template>
 
 <script>
-// challenge
-//    - when a user clicks on a skill, delete that skill
-
 export default {
   data() {
     return {
@@ -58,6 +59,9 @@ export default {
       this.skills = this.skills.filter((item) => {
         return skill !== item
       })
+    },
+    handleSubmit() {
+      console.log('form submitted')
     }
   }
 }
@@ -111,5 +115,18 @@ input[type='checkbox'] {
   letter-spacing: 1px;
   border-radius: 20px;
   cursor: pointer;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0b6dff;
+  color: white;
+  border: 0;
+  border-radius: 20px;
+}
+
+.submit {
+  text-align: center;
 }
 </style>
