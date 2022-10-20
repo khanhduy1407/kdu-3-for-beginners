@@ -15,7 +15,7 @@
     <label>Skill:</label>
     <input type="text" k-model="tempSkill" @keyup.alt="addSkill"> <!-- press Alt , -->
     <div k-for="skill in skills" :key="skill" class="pill">
-      {{ skill }}
+      <span @click="deleteSkill(skill)">{{ skill }}</span>
     </div>
 
     <div class="terms">
@@ -53,6 +53,11 @@ export default {
         }
         this.tempSkill = ''
       }
+    },
+    deleteSkill(skill) {
+      this.skills = this.skills.filter((item) => {
+        return skill !== item
+      })
     }
   }
 }
@@ -93,5 +98,18 @@ input[type='checkbox'] {
   top: 2px;
   display: inline;
   width: 16px;
+}
+
+.pill {
+  margin: 20px 10px 0 0;
+  padding: 6px 12px;
+  display: inline-block;
+  background: #eee;
+  color: #777;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 </style>
