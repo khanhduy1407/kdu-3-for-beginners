@@ -1,7 +1,12 @@
 <template>
-  <h1>{{ job.title }}</h1>
-  <p>The job id is {{ id }}</p>
-  <p>{{ job.details }}</p>
+  <div k-if="job">
+    <h1>{{ job.title }}</h1>
+    <p>The job id is {{ id }}</p>
+    <p>{{ job.details }}</p>
+  </div>
+  <div k-else>
+    <p>Loading job details...</p>
+  </div>
 </template>
 
 <script>
