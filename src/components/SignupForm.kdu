@@ -31,6 +31,9 @@
 </template>
 
 <script>
+// challenge
+//    - when a user clicks on a skill, delete that skill
+
 export default {
   data() {
     return {
