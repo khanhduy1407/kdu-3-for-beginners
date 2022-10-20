@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'kdu-router'
 import HomeView from '../views/HomeView.kdu'
 import AboutView from '../views/AboutView.kdu'
 import Jobs from '../views/jobs/Jobs.kdu'
+import JobDetails from '../views/jobs/JobDetails.kdu'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/jobs',
     name: 'jobs',
     component: Jobs
+  },
+  {
+    path: '/jobs/:id',
+    name: 'jobDetails',
+    component: JobDetails
   }
 ]
 
