@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'kdu-router'
 import HomeView from '../views/HomeView.kdu'
 import AboutView from '../views/AboutView.kdu'
+import NotFound from '../views/NotFound.kdu'
 import Jobs from '../views/jobs/Jobs.kdu'
 import JobDetails from '../views/jobs/JobDetails.kdu'
 
@@ -25,6 +26,17 @@ const routes = [
     name: 'jobDetails',
     component: JobDetails,
     props: true
+  },
+  // redirect
+  {
+    path: '/all-jobs',
+    redirect: '/jobs'
+  },
+  // catchall 404
+  {
+    path: '/:catchAll(.*)',
+    name: 'notFound',
+    component: NotFound
   }
 ]
 
