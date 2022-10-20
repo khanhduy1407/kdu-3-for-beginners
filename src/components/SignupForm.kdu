@@ -5,6 +5,7 @@
 
     <label>Password:</label>
     <input type="password" required k-model="password">
+    <div k-if="passwordError" class="error">{{ passwordError }}</div>
 
     <label>Role:</label>
     <select k-model="role">
@@ -40,6 +41,7 @@ export default {
     return {
         email: 'mario',
         password: '',
+        passwordError: '',
         role: 'designer',
         tempSkill: '',
         skills: [],
@@ -61,7 +63,16 @@ export default {
       })
     },
     handleSubmit() {
-      console.log('form submitted')
+      // validate password
+      this.passwordError = this.password.length > 5 ? '' : 'Password must be as least 6 chars long'
+
+      if (!this.passwordError) {
+        console.log('email: ', this.email)
+        console.log('password: ', this.password)
+        console.log('role: ', this.role)
+        console.log('skills: ', this.skills)
+        console.log('terms accepted: ', this.terms)
+      }
     }
   }
 }
@@ -102,6 +113,13 @@ input[type='checkbox'] {
   top: 2px;
   display: inline;
   width: 16px;
+}
+
+.error {
+  margin-top: 10px;
+  color: #ff0062;
+  font-size: 0.8em;
+  font-weight: bold;
 }
 
 .pill {
