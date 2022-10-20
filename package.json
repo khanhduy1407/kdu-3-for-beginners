@@ -1,0 +1,17 @@
+{
+  "name": "kdu-3-for-beginners",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "kdu-cli-service serve",
+    "build": "kdu-cli-service build"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "kdu": "^3.2.37-alpha.1"
+  },
+  "devDependencies": {
+    "@kdujs/cli-plugin-babel": "~5.0.0",
+    "@kdujs/cli-service": "~5.0.0"
+  }
+}
