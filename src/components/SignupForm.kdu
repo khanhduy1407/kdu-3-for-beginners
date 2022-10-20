@@ -12,24 +12,15 @@
       <option value="designer">Web Designer</option>
     </select>
 
+    <label>Skill:</label>
+    <input type="text" k-model="tempSkill" @keyup="addSkill">
+    <div k-for="skill in skills" :key="skill" class="pill">
+      {{ skill }}
+    </div>
+
     <div class="terms">
       <input type="checkbox" k-model="terms" required>
       <label>Accept terms and conditions</label>
-    </div>
-
-    <div>
-      <input type="checkbox" value="nkduy" k-model="names">
-      <label>NKDuy</label>
-    </div>
-
-    <div>
-      <input type="checkbox" value="htkdung" k-model="names">
-      <label>HTKDung</label>
-    </div>
-
-    <div>
-      <input type="checkbox" value="mario" k-model="names">
-      <label>mario</label>
     </div>
   </form>
 
@@ -37,7 +28,6 @@
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
   <p>Terms accepted: {{ terms }}</p>
-  <p>Names: {{ names }}</p>
 </template>
 
 <script>
@@ -47,8 +37,17 @@ export default {
         email: 'mario',
         password: '',
         role: 'designer',
-        terms: false,
-        names: []
+        tempSkill: '',
+        skills: [],
+        terms: false
+    }
+  },
+  methods: {
+    addSkill(e) {
+      if (e.key === ',' && this.tempSkill) {
+        this.skills.push(this.tempSkill)
+        this.tempSkill = ''
+      }
     }
   }
 }
