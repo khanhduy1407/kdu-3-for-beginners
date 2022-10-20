@@ -1,0 +1,43 @@
+<template>
+  <form>
+    <label>Email:</label>
+    <input type="email" required>
+  </form>
+</template>
+
+<script>
+export default {
+    //
+}
+</script>
+
+<style>
+form {
+  margin: 30px auto;
+  padding: 40px;
+  max-width: 420px;
+  background: white;
+  text-align: left;
+  border-radius: 10px;
+}
+
+label {
+  margin: 25px 0 15px;
+  display: inline-block;
+  color: #aaa;
+  font-size: 0.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input {
+  padding: 10px 6px;
+  display: block;
+  width: 100%;
+  color: #555;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+</style>

@@ -1,16 +1,12 @@
 <template>
-  <img alt="Kdu logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Kdu.js App"/>
+  <SignupForm />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.kdu'
-
+import SignupForm from './components/SignupForm.kdu';
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { SignupForm }
 }
 </script>
 
@@ -22,5 +18,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  margin: 0;
+  background: #eee;
 }
 </style>
