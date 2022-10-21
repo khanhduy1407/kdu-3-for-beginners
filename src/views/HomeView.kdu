@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <PostList :posts="posts" />
+    <PostList k-if="showPosts" :posts="posts" />
+    <button @click="showPosts = !showPosts">toggle posts</button>
+    <button @click="posts.pop()">delete a post</button>
   </div>
 </template>
 
@@ -17,7 +19,10 @@ export default {
       { title: "welcome to the blog", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur felis libero, in porta magna vestibulum eget. Suspendisse malesuada dui in ligula imperdiet pharetra. Vivamus felis nisl, gravida non porttitor eget, molestie sed lorem. Integer finibus dui arcu, nec egestas nulla posuere nec. Quisque eu ex nec dolor egestas condimentum ac ac nulla. Phasellus ut cursus ligula. Etiam vel laoreet erat. Vestibulum sit amet erat id velit sodales efficitur id in sem. Quisque ac cursus nunc. Aenean feugiat ex metus, at tristique elit accumsan eu. Nam placerat dolor sit amet lorem aliquet congue.", id: 1 },
       { title: "top 5 CSS tips", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur felis libero, in porta magna vestibulum eget. Suspendisse malesuada dui in ligula imperdiet pharetra. Vivamus felis nisl, gravida non porttitor eget, molestie sed lorem. Integer finibus dui arcu, nec egestas nulla posuere nec. Quisque eu ex nec dolor egestas condimentum ac ac nulla. Phasellus ut cursus ligula. Etiam vel laoreet erat. Vestibulum sit amet erat id velit sodales efficitur id in sem. Quisque ac cursus nunc. Aenean feugiat ex metus, at tristique elit accumsan eu. Nam placerat dolor sit amet lorem aliquet congue.", id: 2 }
     ]);
-    return { posts };
+
+    const showPosts = ref(true)
+
+    return { posts, showPosts };
   }
 }
 </script>
