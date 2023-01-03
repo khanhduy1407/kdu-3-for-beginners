@@ -12,6 +12,6 @@
   },
   "devDependencies": {
     "@kdujs/cli-plugin-babel": "~5.0.0",
-    "@kdujs/cli-service": "~5.0.0"
+    "@kdujs/cli-service": "~5.0.10"
   }
 }
